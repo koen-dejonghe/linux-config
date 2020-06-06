@@ -1,1 +1,5 @@
 my tmux, vim configs
+
+
+### vimrc:
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
