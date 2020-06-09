@@ -4,6 +4,7 @@ se ic
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
 call vundle#begin()
 "
 " " alternatively, pass a path where Vundle should install plugins
@@ -29,6 +30,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'msrose/vim-perpetuloc'
+Plugin 'junegunn/fzf.vim'
 
 "
 " " All of your Plugins must be added before the following line
