@@ -73,7 +73,7 @@ let syntastic_python_flake8_args='--ignore=W291,W293'
 let g:syntastic_always_populate_loc_list = 1
 let g:airline#extensions#branch#enabled = 1
 
-" let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$', '__pycache__'] "ignore files in NERDTree
 
 set showcmd
 
@@ -96,7 +96,12 @@ nnoremap <leader>O zR
 nnoremap <leader>C zM
 " zoom window
 nnoremap <leader>Z <c-w>_
+" unzoom window
 nnoremap <leader>z <c-w>=
+" grep in files
+nnoremap <leader>/ :Ag<CR>
+" toggle numbers
+nnoremap <leader>9 :set invnumber<CR>
 
 
 " jump to the last position when reopening a file
