@@ -18,7 +18,7 @@ Plugin 'gmarik/Vundle.vim'
 " " used Bundle instead of Plugin)
 "
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
@@ -28,7 +28,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
 Plugin 'msrose/vim-perpetuloc'
 Plugin 'junegunn/fzf.vim'
 
@@ -58,18 +58,18 @@ au BufNewFile,BufRead *.py
 
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-set nu
+" set nu
 set encoding=utf-8
 set mouse=a
 
 let g:airline_theme='zenburn'
-let g:ycm_confirm_extra_conf=0
-let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_always_populate_location_list = 1
+" let g:ycm_confirm_extra_conf=0
+" let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_always_populate_location_list = 1
 
 " let g:syntastic_python_checkers = ['pycodestyle', 'bandit', 'flake8']
-let g:syntastic_python_checkers = ['flake8', 'bandit']
-let syntastic_python_flake8_args='--ignore=W291,W293'
+" let g:syntastic_python_checkers = ['flake8', 'bandit']
+" let syntastic_python_flake8_args='--ignore=W291,W293'
 let g:syntastic_always_populate_loc_list = 1
 let g:airline#extensions#branch#enabled = 1
 
@@ -81,7 +81,7 @@ let mapleader = " "
 " toggle tree
 nnoremap <leader>t :NERDTreeToggle<CR>
 " go to def
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " next error
 nnoremap <leader>n :Lnext<CR> 
 " previous error
@@ -108,6 +108,8 @@ nnoremap <leader>9 :set invnumber<CR>
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g`\"" | endif
+  " open all folds by default
+  au BufRead * normal zR
 endif
 
 let &t_SI .= "\<Esc>[?2004h"
